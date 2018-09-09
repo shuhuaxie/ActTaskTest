@@ -1,8 +1,6 @@
 # ActivityTaskTest
 Test android task
 
-Some Test For 
-
 launchMode :
 
           0) Normal
