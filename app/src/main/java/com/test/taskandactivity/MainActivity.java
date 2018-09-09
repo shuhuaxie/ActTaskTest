@@ -27,14 +27,43 @@ public class MainActivity extends BaseAct {
         findViewById(R.id.start_myself).setOnClickListener(new View.OnClickListener() {
             @Override public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, MainActivity.class);
-                intent.putExtra("msg",this.toString()+"msg");
+                intent.putExtra("msg", this.toString() + "msg");
                 startActivity(intent);
             }
         });
         findViewById(R.id.start_single_top).setOnClickListener(new View.OnClickListener() {
             @Override public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, Test2Activity.class);
-
+                startActivity(intent);
+            }
+        });
+        findViewById(R.id.start_single_instance).setOnClickListener(new View.OnClickListener() {
+            @Override public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, Test3Activity.class);
+                startActivity(intent);
+            }
+        });
+        ((Button) findViewById(R.id.task_info)).setText("taskId:" + this.getTaskId());
+        findViewById(R.id.new_task).setOnClickListener(new View.OnClickListener() {
+            @Override public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, TestActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(intent);
+                startActivity(intent);
+            }
+        });
+        findViewById(R.id.new_task_2).setOnClickListener(new View.OnClickListener() {
+            @Override public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, Test4Activity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(intent);
+                startActivity(intent);
+            }
+        });
+        findViewById(R.id.clear_top).setOnClickListener(new View.OnClickListener() {
+            @Override public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, Test5Activity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
             }
         });
@@ -43,8 +72,8 @@ public class MainActivity extends BaseAct {
     @Override protected void onNewIntent(Intent intent) {
         super.onNewIntent(intent);
         String msg = intent.getStringExtra("msg");
-        if(!TextUtils.isEmpty(msg)){
-            ((Button)findViewById(R.id.intent_msg)).setText(msg);
+        if (!TextUtils.isEmpty(msg)) {
+            ((Button) findViewById(R.id.intent_msg)).setText(msg);
         }
     }
 }

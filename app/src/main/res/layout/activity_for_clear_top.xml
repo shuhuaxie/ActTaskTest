@@ -13,7 +13,7 @@
         android:layout_marginLeft="16dp"
         android:layout_marginTop="20dp"
         android:background="#aaaaaa"
-        android:text="重新打开此Act，只会调用onNewIntent"
+        android:text="重新打开此Act，会重新onCreate"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -24,7 +24,9 @@
         android:layout_marginLeft="16dp"
         android:layout_marginTop="66dp"
         android:background="#aaaaaa"
-        android:text="打开普通Act，再打开次Act，可以逐个返回"
+        android:text="打开普通Act，然后打开自己，也会重新onCreate"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+
 </android.support.constraint.ConstraintLayout>

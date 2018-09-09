@@ -24,7 +24,30 @@
         android:layout_marginLeft="16dp"
         android:layout_marginTop="66dp"
         android:background="#aaaaaa"
-        android:text="打开普通Act，再打开次Act，可以逐个返回"
+        android:text="打开普通Act"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/task_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="9dp"
+        android:text="Button"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="20dp"
+        android:text="singleInstance 相当于新的app，taskId与原来的不同，可以在应用列表中切换，不同taskId下的调用，会首先切换task"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/task_info" />
+
 </android.support.constraint.ConstraintLayout>

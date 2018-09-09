@@ -5,44 +5,81 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical">
+
             <Button
-                android:layout_margin="10dp"
                 android:id="@+id/two_act"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="#aaaaaa"
-                android:text="1。连续打开2个普通Activity，可以逐个返回。"
-                />
-            <Button
                 android:layout_margin="10dp"
+                android:background="#aaaaaa"
+                android:text="1。连续打开2个普通Activity，可以逐个返回，也可以快速返回" />
+
+            <Button
                 android:id="@+id/start_myself"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="#aaaaaa"
-                android:text="2。打开自己只会调用OnNewIntent"
-                />
-            <Button
                 android:layout_margin="10dp"
+                android:background="#aaaaaa"
+                android:text="2。打开自己只会调用OnNewIntent" />
+
+            <Button
                 android:id="@+id/start_single_top"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="#aaaaaa"
-                android:text="3。打开SingleTop Act"
-                />
-            <Button
                 android:layout_margin="10dp"
+                android:background="#aaaaaa"
+                android:text="3。打开SingleTop Act" />
+            <Button
+                android:id="@+id/start_single_instance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="#aaaaaa"
+                android:text="4。打开SingleInstance Act" />
+
+            <Button
                 android:id="@+id/intent_msg"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="intent_msg"
-                />
+                android:layout_margin="10dp"
+                android:text="intent_msg" />
+
+            <Button
+                android:id="@+id/task_info"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text="" />
+            <Button
+                android:id="@+id/new_task"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="#aaaaaa"
+                android:text="1。以new_task打开两次普通task,声明taskAffinity,相当于singleInstance" />
+            <Button
+                android:id="@+id/new_task_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="#aaaaaa"
+                android:text="2。以new_task打开两次普通task,不声明taskAffinity，没有任何影响" />
+            <Button
+                android:id="@+id/clear_top"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="#aaaaaa"
+                android:text="3。以clear_top打开普通task." />
         </LinearLayout>
 
 

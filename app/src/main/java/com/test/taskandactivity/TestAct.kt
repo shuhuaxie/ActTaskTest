@@ -8,7 +8,7 @@ import android.view.View
 import android.widget.Button
 import android.widget.TextView
 
-class TestActivity : BaseAct() {
+open class TestActivity : BaseAct() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -49,7 +49,45 @@ class Test2Activity : BaseAct() {
 //            startActivity(Intent(this@MainActivity, TestActivity::class.java))
 //        }
     }
+}
 
+class Test3Activity : BaseAct() {
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_single_instance)
+        val intent = Intent(this@Test3Activity, Test3Activity::class.java)
+        intent.putExtra("msg",this.toString()+"msg")
+        findViewById<TextView>(R.id.textView).setOnClickListener{
+            startActivity(intent)
+        }
+        findViewById<TextView>(R.id.textView2).setOnClickListener{
+            startActivity(Intent(this@Test3Activity, TestActivity::class.java))
+//            startActivity(intent)
+        }
+        findViewById<Button>(R.id.task_info).setText("taskId:" + this.taskId)
+
+    }
+
+}
+class Test4Activity :TestActivity()
+class Test5Activity : BaseAct() {
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_for_clear_top)
+        val intent = Intent(this@Test5Activity, Test4Activity::class.java)
+        intent.putExtra("msg", this.toString() + "msg")
+        intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
+        val myIntent = Intent(this@Test5Activity, Test5Activity::class.java)
+        myIntent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
+        findViewById<TextView>(R.id.textView).setOnClickListener {
+            startActivity(myIntent)
+        }
+        findViewById<TextView>(R.id.textView2).setOnClickListener {
+            startActivity(intent)
+            startActivity(myIntent)
+        }
+    }
 
 }
